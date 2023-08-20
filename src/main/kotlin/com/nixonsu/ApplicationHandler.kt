@@ -3,17 +3,16 @@ package com.nixonsu
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
-import com.amazonaws.services.lambda.runtime.events.CloudWatchLogsEvent
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
 import com.amazonaws.services.sns.model.PublishRequest
 import com.nixonsu.service.PetrolPriceService
 
-class ApplicationHandler : RequestHandler<CloudWatchLogsEvent, String> {
-    override fun handleRequest(event: CloudWatchLogsEvent, context: Context): String {
+class ApplicationHandler : RequestHandler<Map<String, Any>, String> {
+    override fun handleRequest(event: Map<String, Any>, context: Context): String {
         val logger = context.logger
 
-        logger.log("EVENT: \n${event.awsLogs.data}")
+        logger.log("Received Event:\n${event}")
 
         logger.log("Calling petrol price service...")
 
