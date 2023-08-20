@@ -22,7 +22,7 @@ class PetrolPriceService {
         val response = client.send(request, HttpResponse.BodyHandlers.ofString())
 
         if (response.statusCode() != 200) {
-            throw HttpResponseException(response.statusCode(), "Unexpected response code ${response.statusCode()}")
+            throw HttpResponseException("Unexpected response code ${response.statusCode()}")
         }
 
         val petrolPriceResponse: PetrolPriceResponse = objectMapper.readValue(response.body())
