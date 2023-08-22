@@ -1,15 +1,20 @@
 package com.nixonsu.model
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class PetrolPriceResponse(
     val updated: Long,
     val regions: List<Region>
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class Region(
     val region: String,
     val prices: List<Price>
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class Price(
     val name: String,
     val type: String,

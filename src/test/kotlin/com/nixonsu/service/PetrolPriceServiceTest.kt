@@ -1,14 +1,53 @@
 package com.nixonsu.service
 
-import org.junit.jupiter.api.Nested
+import io.mockk.every
+import io.mockk.mockk
+import org.apache.http.client.HttpResponseException
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
 
 class PetrolPriceServiceTest {
-    @Nested
-    inner class GetLowestU91PriceInAustraliaTest {
-        @Test
-        fun `should be successful`() {
-            return
+    private val httpClient = mockk<HttpClient>()
+    private val subject = PetrolPriceService(httpClient)
+
+    @Test
+    fun `Given request is successful then return correct price`() {
+        // Given
+        val mockResponse: HttpResponse<String> = mockk()
+        val mockResponseBody =
+            PetrolPriceServiceTest::class.java.getResource("/fixtures/response.json")?.readText(Charsets.UTF_8)
+        every { mockResponse.body() } returns mockResponseBody
+        every { mockResponse.statusCode() } returns 200
+        every {
+            httpClient.send<String>(any<HttpRequest>(), any())
+        } returns mockResponse
+
+        // When
+        val price = subject.getLowestU91PriceInAustralia()
+
+        // Then
+        assertEquals(177.5, price)
+    }
+
+    @Test
+    fun `Given request is not successful then throw HttpResponseException`() {
+        // Given
+        val mockResponse: HttpResponse<String> = mockk()
+        every { mockResponse.body() } returns ""
+        every { mockResponse.statusCode() } returns 500
+        every {
+            httpClient.send<String>(any<HttpRequest>(), any())
+        } returns mockResponse
+
+        // When, Then
+        val exception = assertThrows<HttpResponseException> {
+            subject.getLowestU91PriceInAustralia()
         }
+        assertEquals(500, exception.statusCode)
+        assertEquals("Internal Server Error", exception.reasonPhrase)
     }
 }

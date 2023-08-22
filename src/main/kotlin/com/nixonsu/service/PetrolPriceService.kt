@@ -3,31 +3,34 @@ package com.nixonsu.service
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.nixonsu.exception.HttpResponseException
+import com.nixonsu.extensions.reasonPhrase
 import com.nixonsu.model.PetrolPriceResponse
+import org.apache.http.client.HttpResponseException
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 
-class PetrolPriceService {
+class PetrolPriceService(private val httpClient: HttpClient) {
     fun getLowestU91PriceInAustralia(): Double? {
-        val client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build()
+        val request = makeHttpPetrolServiceHttpRequest()
 
-        val request = HttpRequest.newBuilder()
-            .uri(URI.create(ELEVEN_SEVEN_URL))
-            .GET()
-            .build()
-
-        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+        val response = httpClient.send(request, HttpResponse.BodyHandlers.ofString())
 
         if (response.statusCode() != 200) {
-            throw HttpResponseException("Unexpected response code ${response.statusCode()}")
+            throw HttpResponseException(response.statusCode(), response.reasonPhrase())
         }
 
         val petrolPriceResponse: PetrolPriceResponse = objectMapper.readValue(response.body())
 
         return extractLowestU91PriceAllRegions(petrolPriceResponse)
+    }
+
+    private fun makeHttpPetrolServiceHttpRequest(): HttpRequest? {
+        return HttpRequest.newBuilder()
+            .uri(URI.create(ELEVEN_SEVEN_URL))
+            .GET()
+            .build()
     }
 
     private fun extractLowestU91PriceAllRegions(data: PetrolPriceResponse): Double? {

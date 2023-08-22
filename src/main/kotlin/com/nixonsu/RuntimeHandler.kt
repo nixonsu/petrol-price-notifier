@@ -5,11 +5,10 @@ import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
-import com.amazonaws.services.sns.model.PublishRequest
 import com.nixonsu.service.PetrolPriceService
 import java.net.http.HttpClient
 
-class ApplicationHandler : RequestHandler<Map<String, Any>, String> {
+class RuntimeHandler : RequestHandler<Map<String, Any>, String> {
     override fun handleRequest(event: Map<String, Any>, context: Context): String {
         // Initialise dependencies
         val client = HttpClient.newBuilder()
@@ -22,8 +21,10 @@ class ApplicationHandler : RequestHandler<Map<String, Any>, String> {
         val snsTopicArn = System.getenv("SNS_TOPIC_ARN")
 
         // Inject dependencies
-        val mainHandler = MainHandler(petrolPriceService, snsClient, snsTopicArn)
-        mainHandler.handle(event, context)
+        val applicationHandler = ApplicationHandler(petrolPriceService, snsClient, snsTopicArn)
+
+        // Handle event
+        applicationHandler.handle(event, context)
 
         return "Done"
     }

@@ -1,3 +1,3 @@
 package com.nixonsu.exception
 
-class PetrolPriceNotFoundException(message: String) : Exception(message)
+class PetrolPriceNotFoundException(message: String, exception: Exception) : Exception(message, exception)

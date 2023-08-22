@@ -13,11 +13,11 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class MainHandlerTest {
+class ApplicationHandlerTest {
     private val petrolPriceService = mockk<PetrolPriceService>()
     private val snsClient = mockk<AmazonSNS>(relaxed = true)
     private val snsTopicArn = "xxxx"
-    private val subject = MainHandler(petrolPriceService, snsClient, snsTopicArn)
+    private val subject = ApplicationHandler(petrolPriceService, snsClient, snsTopicArn)
     private val context = mockk<Context>(relaxed = true)
 
     @Test
