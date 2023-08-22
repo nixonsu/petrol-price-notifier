@@ -5,7 +5,7 @@ import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
-import com.nixonsu.service.PetrolPriceService
+import com.nixonsu.services.PetrolPriceService
 import java.net.http.HttpClient
 
 class RuntimeHandler : RequestHandler<Map<String, Any>, String> {

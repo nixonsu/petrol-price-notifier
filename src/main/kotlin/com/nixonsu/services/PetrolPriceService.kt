@@ -1,10 +1,10 @@
-package com.nixonsu.service
+package com.nixonsu.services
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.nixonsu.extensions.reasonPhrase
-import com.nixonsu.model.PetrolPriceResponse
+import com.nixonsu.models.PetrolPriceResponse
 import org.apache.http.client.HttpResponseException
 import java.net.URI
 import java.net.http.HttpClient

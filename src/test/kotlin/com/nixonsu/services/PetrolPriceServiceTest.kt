@@ -1,4 +1,4 @@
-package com.nixonsu.service
+package com.nixonsu.services
 
 import io.mockk.every
 import io.mockk.mockk

@@ -3,8 +3,8 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.exception.PetrolPriceNotFoundException
-import com.nixonsu.service.PetrolPriceService
+import com.nixonsu.exceptions.PetrolPriceNotFoundException
+import com.nixonsu.services.PetrolPriceService
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

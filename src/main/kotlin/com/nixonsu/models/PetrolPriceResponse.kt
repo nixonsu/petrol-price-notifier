@@ -1,4 +1,4 @@
-package com.nixonsu.model
+package com.nixonsu.models
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
