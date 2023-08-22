@@ -1,3 +1,3 @@
 
-rootProject.name = "petrol-notifier"
+rootProject.name = "petrol-price-notifier"
 
