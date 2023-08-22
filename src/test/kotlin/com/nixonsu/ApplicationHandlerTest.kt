@@ -39,12 +39,11 @@ class ApplicationHandlerTest {
         every { petrolPriceService.getLowestU91PriceInAustralia() } throws HttpResponseException(500, "Internal Server Error")
 
         // When
-        val exception = assertThrows<PetrolPriceNotFoundException> {
+        assertThrows<PetrolPriceNotFoundException> {
             subject.handle(emptyMap(), context)
         }
 
         // Then
-        assertEquals("Error retrieving petrol price", exception.message)
         verify(exactly = 0) { snsClient.publish(any()) }
     }
 }

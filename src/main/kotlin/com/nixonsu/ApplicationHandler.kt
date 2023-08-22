@@ -22,8 +22,12 @@ class ApplicationHandler(
         val lowestPrice = try {
             petrolPriceService.getLowestU91PriceInAustralia()
         } catch (e: HttpResponseException) {
-            throw PetrolPriceNotFoundException("Error retrieving petrol price", e)
+            throw PetrolPriceNotFoundException("Error retrieving petrol price.", e)
         }
+            ?: throw PetrolPriceNotFoundException(
+                "Error retrieving petrol price - it is null. Petrol price api contract may have changed.",
+                null
+            )
 
         logger.log("Publishing to SNS...")
         val publishRequest = PublishRequest(snsTopicArn, "Lowest price for U91 today: $lowestPrice")

@@ -1,0 +1,1110 @@
+{
+  "updated": 1692451732,
+  "regions": [
+    {
+      "region": "All",
+      "prices": [
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "E10",
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U91",
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U95",
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U98",
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "Diesel",
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Keysborough",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Keysborough",
+          "state": "VIC",
+          "postcode": "3173",
+          "lat": -37.990896627463,
+          "lng": 145.14944441773
+        }
+      ]
+    },
+    {
+      "region": "VIC",
+      "prices": [
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "E10",
+          "price": 183.9,
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "U91",
+          "price": 185.9,
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "U95",
+          "price": 197.9,
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "U98",
+          "price": 205.9,
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Sebastopol",
+          "type": "Diesel",
+          "price": 197.9,
+          "suburb": "Sebastopol",
+          "state": "VIC",
+          "postcode": "3356",
+          "lat": -37.58567706647,
+          "lng": 143.83387875079
+        },
+        {
+          "name": "11-Seven Keysborough",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Keysborough",
+          "state": "VIC",
+          "postcode": "3173",
+          "lat": -37.990896627463,
+          "lng": 145.14944441773
+        }
+      ]
+    },
+    {
+      "region": "NSW",
+      "prices": [
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "E10",
+          "price": 184.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "U91",
+          "price": 186.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "U95",
+          "price": 198.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "U98",
+          "price": 206.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "Diesel",
+          "price": 199.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Kingswood",
+          "type": "LPG",
+          "price": 79.9,
+          "suburb": "Kingswood",
+          "state": "NSW",
+          "postcode": "2747",
+          "lat": -33.759878410605,
+          "lng": 150.7266295706
+        }
+      ]
+    },
+    {
+      "region": "QLD",
+      "prices": [
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "E10",
+          "price": 175.5,
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U91",
+          "price": 177.5,
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U95",
+          "price": 189.5,
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Tingalpa",
+          "type": "U98",
+          "price": 197.5,
+          "suburb": "Tingalpa",
+          "state": "QLD",
+          "postcode": "4173",
+          "lat": -27.47168,
+          "lng": 153.11046
+        },
+        {
+          "name": "11-Seven Mundingburra (FNQ)",
+          "type": "Diesel",
+          "price": 201.9,
+          "suburb": "Mundingburra",
+          "state": "QLD",
+          "postcode": "4812",
+          "lat": -19.293664336731,
+          "lng": 146.79580369797
+        },
+        {
+          "name": "11-Seven Maroochydore North",
+          "type": "LPG",
+          "price": 95.9,
+          "suburb": "Maroochydore",
+          "state": "QLD",
+          "postcode": "4558",
+          "lat": -26.660067974986,
+          "lng": 153.10049505868
+        }
+      ]
+    },
+    {
+      "region": "WA",
+      "prices": [
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U91",
+          "price": 179.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U95",
+          "price": 191.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U98",
+          "price": 199.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Rockingham",
+          "type": "Diesel",
+          "price": 199.9,
+          "suburb": "East Rockingham",
+          "state": "WA",
+          "postcode": "6168",
+          "lat": -32.276521851573,
+          "lng": 115.77772280498
+        }
+      ]
+    },
+    {
+      "region": "All-2",
+      "prices": [
+        {
+          "name": "11-Seven Compton Road",
+          "type": "E10",
+          "price": 177.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U91",
+          "price": 179.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U95",
+          "price": 191.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U98",
+          "price": 199.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Harpley",
+          "type": "Diesel",
+          "price": 197.9,
+          "suburb": "Werribee",
+          "state": "VIC",
+          "postcode": "3030",
+          "lat": -37.91304,
+          "lng": 144.6143
+        },
+        {
+          "name": "11-Seven Dingley",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Dingley Village",
+          "state": "VIC",
+          "postcode": "3172",
+          "lat": -37.973461439728,
+          "lng": 145.12066147997
+        }
+      ]
+    },
+    {
+      "region": "VIC-2",
+      "prices": [
+        {
+          "name": "11-Seven Colac",
+          "type": "E10",
+          "price": 192.9,
+          "suburb": "Colac",
+          "state": "VIC",
+          "postcode": "3250",
+          "lat": -38.338452945303,
+          "lng": 143.5786522442
+        },
+        {
+          "name": "11-Seven Corio",
+          "type": "U91",
+          "price": 187.9,
+          "suburb": "Corio",
+          "state": "VIC",
+          "postcode": "3214",
+          "lat": -38.074491441135,
+          "lng": 144.35807268927
+        },
+        {
+          "name": "11-Seven Corio",
+          "type": "U95",
+          "price": 199.9,
+          "suburb": "Corio",
+          "state": "VIC",
+          "postcode": "3214",
+          "lat": -38.074491441135,
+          "lng": 144.35807268927
+        },
+        {
+          "name": "11-Seven Corio",
+          "type": "U98",
+          "price": 207.9,
+          "suburb": "Corio",
+          "state": "VIC",
+          "postcode": "3214",
+          "lat": -38.074491441135,
+          "lng": 144.35807268927
+        },
+        {
+          "name": "11-Seven Harpley",
+          "type": "Diesel",
+          "price": 197.9,
+          "suburb": "Werribee",
+          "state": "VIC",
+          "postcode": "3030",
+          "lat": -37.91304,
+          "lng": 144.6143
+        },
+        {
+          "name": "11-Seven Dingley",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Dingley Village",
+          "state": "VIC",
+          "postcode": "3172",
+          "lat": -37.973461439728,
+          "lng": 145.12066147997
+        }
+      ]
+    },
+    {
+      "region": "NSW-2",
+      "prices": [
+        {
+          "name": "11-Seven Kelso",
+          "type": "E10",
+          "price": 187.5,
+          "suburb": "Kelso",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.418350565932,
+          "lng": 149.60632528248
+        },
+        {
+          "name": "11-Seven Kelso",
+          "type": "U91",
+          "price": 189.5,
+          "suburb": "Kelso",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.418350565932,
+          "lng": 149.60632528248
+        },
+        {
+          "name": "11-Seven Kelso",
+          "type": "U95",
+          "price": 201.5,
+          "suburb": "Kelso",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.418350565932,
+          "lng": 149.60632528248
+        },
+        {
+          "name": "11-Seven Kelso",
+          "type": "U98",
+          "price": 209.5,
+          "suburb": "Kelso",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.418350565932,
+          "lng": 149.60632528248
+        },
+        {
+          "name": "11-Seven Minto",
+          "type": "Diesel",
+          "price": 201.7,
+          "suburb": "Minto",
+          "state": "NSW",
+          "postcode": "2566",
+          "lat": -34.032223513546,
+          "lng": 150.85037285115
+        },
+        {
+          "name": "11-Seven Kings Park",
+          "type": "LPG",
+          "price": 79.9,
+          "suburb": "Kings Park",
+          "state": "NSW",
+          "postcode": "2148",
+          "lat": -33.746525208936,
+          "lng": 150.90693436507
+        }
+      ]
+    },
+    {
+      "region": "QLD-2",
+      "prices": [
+        {
+          "name": "11-Seven Compton Road",
+          "type": "E10",
+          "price": 177.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U91",
+          "price": 179.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U95",
+          "price": 191.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "U98",
+          "price": 199.5,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        },
+        {
+          "name": "11-Seven North Cairns (FNQ)",
+          "type": "Diesel",
+          "price": 201.9,
+          "suburb": "North Cairns",
+          "state": "QLD",
+          "postcode": "4870",
+          "lat": -16.90603,
+          "lng": 145.7599
+        },
+        {
+          "name": "11-Seven Pinelands Road",
+          "type": "LPG",
+          "price": 108.9,
+          "suburb": "Sunnybank Hills",
+          "state": "QLD",
+          "postcode": "4109",
+          "lat": -27.59157,
+          "lng": 153.06045
+        }
+      ]
+    },
+    {
+      "region": "WA-2",
+      "prices": [
+        {
+          "name": "11-Seven Bunbury East",
+          "type": "U91",
+          "price": 189.5,
+          "suburb": "East Bunbury",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.345756410691,
+          "lng": 115.66198548678
+        },
+        {
+          "name": "11-Seven Bunbury East",
+          "type": "U95",
+          "price": 201.5,
+          "suburb": "East Bunbury",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.345756410691,
+          "lng": 115.66198548678
+        },
+        {
+          "name": "11-Seven Bunbury East",
+          "type": "U98",
+          "price": 209.5,
+          "suburb": "East Bunbury",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.345756410691,
+          "lng": 115.66198548678
+        },
+        {
+          "name": "11-Seven Caversham",
+          "type": "Diesel",
+          "price": 199.9,
+          "suburb": "Caversham",
+          "state": "WA",
+          "postcode": "6055",
+          "lat": -31.875453326596,
+          "lng": 115.97450605008
+        }
+      ]
+    },
+    {
+      "region": "All-3",
+      "prices": [
+        {
+          "name": "11-Seven Flinders View",
+          "type": "E10",
+          "price": 177.9,
+          "suburb": "Flinders View",
+          "state": "QLD",
+          "postcode": "4305",
+          "lat": -27.65353,
+          "lng": 152.76316
+        },
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U91",
+          "price": 179.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U95",
+          "price": 191.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Dalyellup",
+          "type": "U98",
+          "price": 199.9,
+          "suburb": "Dalyellup",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.3971,
+          "lng": 115.6362
+        },
+        {
+          "name": "11-Seven Muswellbrook",
+          "type": "Diesel",
+          "price": 199.5,
+          "suburb": "Muswellbrook",
+          "state": "NSW",
+          "postcode": "2333",
+          "lat": -32.270509151979,
+          "lng": 150.8882846096
+        },
+        {
+          "name": "11-Seven Keysborough",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Keysborough",
+          "state": "VIC",
+          "postcode": "3173",
+          "lat": -37.994229957026,
+          "lng": 145.17610931496
+        }
+      ]
+    },
+    {
+      "region": "VIC-3",
+      "prices": [
+        {
+          "name": "11-Seven Shepparton North",
+          "type": "E10",
+          "price": 193.9,
+          "suburb": "Shepparton",
+          "state": "VIC",
+          "postcode": "3630",
+          "lat": -36.34817,
+          "lng": 145.40163
+        },
+        {
+          "name": "11-Seven Alfredton",
+          "type": "U91",
+          "price": 189.9,
+          "suburb": "Alfredton",
+          "state": "VIC",
+          "postcode": "3350",
+          "lat": -37.555933832215,
+          "lng": 143.81820732948
+        },
+        {
+          "name": "11-Seven Alfredton",
+          "type": "U95",
+          "price": 201.9,
+          "suburb": "Alfredton",
+          "state": "VIC",
+          "postcode": "3350",
+          "lat": -37.555933832215,
+          "lng": 143.81820732948
+        },
+        {
+          "name": "11-Seven Alfredton",
+          "type": "U98",
+          "price": 209.9,
+          "suburb": "Alfredton",
+          "state": "VIC",
+          "postcode": "3350",
+          "lat": -37.555933832215,
+          "lng": 143.81820732948
+        },
+        {
+          "name": "11-Seven Dromana",
+          "type": "Diesel",
+          "price": 199.9,
+          "suburb": "Dromana",
+          "state": "VIC",
+          "postcode": "3936",
+          "lat": -38.33543,
+          "lng": 144.95957
+        },
+        {
+          "name": "11-Seven Keysborough",
+          "type": "LPG",
+          "price": 69.7,
+          "suburb": "Keysborough",
+          "state": "VIC",
+          "postcode": "3173",
+          "lat": -37.994229957026,
+          "lng": 145.17610931496
+        }
+      ]
+    },
+    {
+      "region": "NSW-3",
+      "prices": [
+        {
+          "name": "11-Seven Bathurst",
+          "type": "E10",
+          "price": 187.5,
+          "suburb": "Bathurst",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.41808,
+          "lng": 149.56816
+        },
+        {
+          "name": "11-Seven Bathurst",
+          "type": "U91",
+          "price": 189.5,
+          "suburb": "Bathurst",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.41808,
+          "lng": 149.56816
+        },
+        {
+          "name": "11-Seven Bathurst",
+          "type": "U95",
+          "price": 201.5,
+          "suburb": "Bathurst",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.41808,
+          "lng": 149.56816
+        },
+        {
+          "name": "11-Seven Bathurst",
+          "type": "U98",
+          "price": 209.5,
+          "suburb": "Bathurst",
+          "state": "NSW",
+          "postcode": "2795",
+          "lat": -33.41808,
+          "lng": 149.56816
+        },
+        {
+          "name": "11-Seven Shortland",
+          "type": "Diesel",
+          "price": 202.5,
+          "suburb": "Shortland",
+          "state": "NSW",
+          "postcode": "2307",
+          "lat": -32.88617,
+          "lng": 151.6954
+        },
+        {
+          "name": "11-Seven Mount Druitt",
+          "type": "LPG",
+          "price": 79.9,
+          "suburb": "Mount Druitt",
+          "state": "NSW",
+          "postcode": "2770",
+          "lat": -33.76482,
+          "lng": 150.82553
+        }
+      ]
+    },
+    {
+      "region": "QLD-3",
+      "prices": [
+        {
+          "name": "11-Seven Flinders View",
+          "type": "E10",
+          "price": 177.9,
+          "suburb": "Flinders View",
+          "state": "QLD",
+          "postcode": "4305",
+          "lat": -27.65353,
+          "lng": 152.76316
+        },
+        {
+          "name": "11-Seven Flinders View",
+          "type": "U91",
+          "price": 179.9,
+          "suburb": "Flinders View",
+          "state": "QLD",
+          "postcode": "4305",
+          "lat": -27.65353,
+          "lng": 152.76316
+        },
+        {
+          "name": "11-Seven Robina Town Centre",
+          "type": "U95",
+          "price": 191.9,
+          "suburb": "Robina",
+          "state": "QLD",
+          "postcode": "4226",
+          "lat": -28.080583490046,
+          "lng": 153.38420659338
+        },
+        {
+          "name": "11-Seven Flinders View",
+          "type": "U98",
+          "price": 199.9,
+          "suburb": "Flinders View",
+          "state": "QLD",
+          "postcode": "4305",
+          "lat": -27.65353,
+          "lng": 152.76316
+        },
+        {
+          "name": "11-Seven Aitkenvale (FNQ)",
+          "type": "Diesel",
+          "price": 201.9,
+          "suburb": "Aitkenvale",
+          "state": "QLD",
+          "postcode": "4814",
+          "lat": -19.295538837292,
+          "lng": 146.77121431001
+        },
+        {
+          "name": "11-Seven Compton Road",
+          "type": "LPG",
+          "price": 108.9,
+          "suburb": "Runcorn",
+          "state": "QLD",
+          "postcode": "4113",
+          "lat": -27.611009241109,
+          "lng": 153.06250217161
+        }
+      ]
+    },
+    {
+      "region": "WA-3",
+      "prices": [
+        {
+          "name": "11-Seven Rockingham",
+          "type": "U91",
+          "price": 189.9,
+          "suburb": "East Rockingham",
+          "state": "WA",
+          "postcode": "6168",
+          "lat": -32.276521851573,
+          "lng": 115.77772280498
+        },
+        {
+          "name": "11-Seven Rockingham",
+          "type": "U95",
+          "price": 202.9,
+          "suburb": "East Rockingham",
+          "state": "WA",
+          "postcode": "6168",
+          "lat": -32.276521851573,
+          "lng": 115.77772280498
+        },
+        {
+          "name": "11-Seven Rockingham",
+          "type": "U98",
+          "price": 209.9,
+          "suburb": "East Rockingham",
+          "state": "WA",
+          "postcode": "6168",
+          "lat": -32.276521851573,
+          "lng": 115.77772280498
+        },
+        {
+          "name": "11-Seven Bunbury East",
+          "type": "Diesel",
+          "price": 199.9,
+          "suburb": "East Bunbury",
+          "state": "WA",
+          "postcode": "6230",
+          "lat": -33.345756410691,
+          "lng": 115.66198548678
+        }
+      ]
+    },
+    {
+      "region": "ACT",
+      "prices": [
+        {
+          "name": "11-Seven Mawson",
+          "type": "E10",
+          "price": 201.9,
+          "suburb": "Mawson",
+          "state": "ACT",
+          "postcode": "2607",
+          "lat": -35.365209566074,
+          "lng": 149.09364074683
+        },
+        {
+          "name": "11-Seven Fyshwick",
+          "type": "U91",
+          "price": 198.9,
+          "suburb": "Fyshwick",
+          "state": "ACT",
+          "postcode": "2609",
+          "lat": -35.325023870546,
+          "lng": 149.15377975312
+        },
+        {
+          "name": "11-Seven Phillip",
+          "type": "U95",
+          "price": 215.9,
+          "suburb": "Phillip",
+          "state": "ACT",
+          "postcode": "2606",
+          "lat": -35.355184,
+          "lng": 149.091148
+        },
+        {
+          "name": "11-Seven Fyshwick",
+          "type": "U98",
+          "price": 218.9,
+          "suburb": "Fyshwick",
+          "state": "ACT",
+          "postcode": "2609",
+          "lat": -35.325023870546,
+          "lng": 149.15377975312
+        },
+        {
+          "name": "11-Seven Fyshwick",
+          "type": "Diesel",
+          "price": 210.9,
+          "suburb": "Fyshwick",
+          "state": "ACT",
+          "postcode": "2609",
+          "lat": -35.325023870546,
+          "lng": 149.15377975312
+        },
+        {
+          "name": "11-Seven Braddon",
+          "type": "LPG",
+          "price": 105.9,
+          "suburb": "Braddon",
+          "state": "ACT",
+          "postcode": "2612",
+          "lat": -35.275689159956,
+          "lng": 149.13164806116
+        }
+      ]
+    },
+    {
+      "region": "ACT-2",
+      "prices": [
+        {
+          "name": "11-Seven Erindale",
+          "type": "E10",
+          "price": 201.9,
+          "suburb": "Wanniassa",
+          "state": "ACT",
+          "postcode": "2903",
+          "lat": -35.405606373005,
+          "lng": 149.10146298874
+        },
+        {
+          "name": "11-Seven Giralang",
+          "type": "U91",
+          "price": 201.9,
+          "suburb": "Giralang",
+          "state": "ACT",
+          "postcode": "2617",
+          "lat": -35.213957370218,
+          "lng": 149.09624424155
+        },
+        {
+          "name": "11-Seven Karabar",
+          "type": "U95",
+          "price": 216.9,
+          "suburb": "Karabar",
+          "state": "NSW",
+          "postcode": "2620",
+          "lat": -35.371428976741,
+          "lng": 149.23270612717
+        },
+        {
+          "name": "11-Seven Giralang",
+          "type": "U98",
+          "price": 221.9,
+          "suburb": "Giralang",
+          "state": "ACT",
+          "postcode": "2617",
+          "lat": -35.213957370218,
+          "lng": 149.09624424155
+        },
+        {
+          "name": "11-Seven Karabar",
+          "type": "Diesel",
+          "price": 214.9,
+          "suburb": "Karabar",
+          "state": "NSW",
+          "postcode": "2620",
+          "lat": -35.371428976741,
+          "lng": 149.23270612717
+        },
+        {
+          "name": "11-Seven Giralang",
+          "type": "LPG",
+          "price": 105.9,
+          "suburb": "Giralang",
+          "state": "ACT",
+          "postcode": "2617",
+          "lat": -35.213957370218,
+          "lng": 149.09624424155
+        }
+      ]
+    },
+    {
+      "region": "ACT-3",
+      "prices": [
+        {
+          "name": "11-Seven Phillip",
+          "type": "E10",
+          "price": 201.9,
+          "suburb": "Phillip",
+          "state": "ACT",
+          "postcode": "2606",
+          "lat": -35.355184,
+          "lng": 149.091148
+        },
+        {
+          "name": "11-Seven Mawson",
+          "type": "U91",
+          "price": 203.9,
+          "suburb": "Mawson",
+          "state": "ACT",
+          "postcode": "2607",
+          "lat": -35.365209566074,
+          "lng": 149.09364074683
+        },
+        {
+          "name": "11-Seven Spence",
+          "type": "U95",
+          "price": 217.9,
+          "suburb": "Spence",
+          "state": "ACT",
+          "postcode": "2615",
+          "lat": -35.194877429136,
+          "lng": 149.06229466667
+        },
+        {
+          "name": "11-Seven Mawson",
+          "type": "U98",
+          "price": 223.9,
+          "suburb": "Mawson",
+          "state": "ACT",
+          "postcode": "2607",
+          "lat": -35.365209566074,
+          "lng": 149.09364074683
+        },
+        {
+          "name": "11-Seven Erindale",
+          "type": "Diesel",
+          "price": 217.9,
+          "suburb": "Wanniassa",
+          "state": "ACT",
+          "postcode": "2903",
+          "lat": -35.405606373005,
+          "lng": 149.10146298874
+        },
+        {
+          "name": "11-Seven Fyshwick",
+          "type": "LPG",
+          "price": 109.9,
+          "suburb": "Fyshwick",
+          "state": "ACT",
+          "postcode": "2609",
+          "lat": -35.325023870546,
+          "lng": 149.15377975312
+        }
+      ]
+    }
+  ]
+}

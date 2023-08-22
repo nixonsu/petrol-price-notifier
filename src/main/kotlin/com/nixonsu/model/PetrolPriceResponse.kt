@@ -18,7 +18,7 @@ data class Region(
 data class Price(
     val name: String,
     val type: String,
-    val price: Double,
+    val price: Double?,
     val suburb: String,
     val state: String,
     val postcode: String,
