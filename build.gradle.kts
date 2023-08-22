@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    id("com.github.johnrengelman.shadow") version "7.0.0"
     kotlin("jvm") version "1.9.0"
     application
 }
@@ -29,4 +30,16 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
+}
+
+application {
+    mainClass.set("com.nixonsu.RuntimeHandlerKt")
+}
+
+tasks {
+    shadowJar {
+        archiveBaseName.set("petrol-price-notifier")
+        archiveVersion.set("1.0-SNAPSHOT")
+        archiveClassifier.set("")
+    }
 }
