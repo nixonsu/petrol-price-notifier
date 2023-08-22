@@ -1,19 +1,9 @@
 Resources:
   # Define the SNS Topic
-  MySNSTopic:
+  LowestPetrolPriceSNS:
     Type: "AWS::SNS::Topic"
     Properties:
-      DisplayName: "MySNSDisplayName"
-      TopicName: "MySNSTopicName"
-
-  # Subscribe a mobile number to the SNS Topic
-  MySNSSubscription:
-    Type: "AWS::SNS::Subscription"
-    Properties:
-      Protocol: "sms"
-      TopicArn:
-        Ref: "MySNSTopic"
-      Endpoint: "+xxxx"
+      TopicName: "LowestPetrolPriceNotifications"
 
   # Define the Lambda execution role
   LambdaExecutionRole:
@@ -43,51 +33,51 @@ Resources:
                 Action:
                   - "sns:Publish"
                 Resource:
-                  Ref: "MySNSTopic"
+                  Ref: "LowestPetrolPriceSNS"
 
   # Define the Lambda function
-  MyLambdaFunction:
+  PetrolPriceNotifierLambda:
     Type: "AWS::Lambda::Function"
     Properties:
-      FunctionName: "MyLambdaFunction"
-      Handler: "com.nixonsu.ApplicationHandler"  # Replace with the actual package and handler class
+      FunctionName: "PetrolPriceNotifier"
+      Handler: "com.nixonsu.RuntimeHandler"  # Replace with the actual package and handler class
       Role:
         Fn::GetAtt:
           - "LambdaExecutionRole"
           - "Arn"
       Code:
-        S3Bucket: "my-bucket"  # Replace with your S3 bucket name
-        S3Key: "my-lambda-code.jar"  # Replace with your jar file path
-      Runtime: "java11.al2"
+        S3Bucket: "petrol-price-notifier"  # Replace with your S3 bucket name
+        S3Key: "petrol-price-notifier-1.0-SNAPSHOT.jar"  # Replace with your jar file path
+      Runtime: "java17.al2"
       Timeout: 15
       Environment:
         Variables:
-          SNS_TOPIC_ARN: !Ref MySNSTopic
+          SNS_TOPIC_ARN: !Ref LowestPetrolPriceSNS
 
   # Define the EventBridge (CloudWatch Events) rule to trigger the Lambda function
-  MyScheduledRule:
+  ScheduledRule:
     Type: "AWS::Events::Rule"
     Properties:
-      Description: "Trigger MyLambdaFunction every day at 9 AM."
+      Description: "Trigger Petrol Price Notifier Lambda every day at 9 AM."
       ScheduleExpression: "cron(0 9 * * ? *)"
       State: "ENABLED"
       Targets:
         -
           Arn:
             Fn::GetAtt:
-              - "MyLambdaFunction"
+              - "PetrolPriceNotifierLambda"
               - "Arn"
-          Id: "MyLambdaFunctionTarget"
+          Id: "PetrolPriceNotifierLambda"
 
   # Grant permissions for the EventBridge rule to invoke the Lambda function
   PermissionForEventsToInvokeLambda:
     Type: "AWS::Lambda::Permission"
     Properties:
       FunctionName:
-        Ref: "MyLambdaFunction"
+        Ref: "PetrolPriceNotifierLambda"
       Action: "lambda:InvokeFunction"
       Principal: "events.amazonaws.com"
       SourceArn:
         Fn::GetAtt:
-          - "MyScheduledRule"
+          - "ScheduledRule"
           - "Arn"
