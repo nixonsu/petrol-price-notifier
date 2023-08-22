@@ -60,6 +60,9 @@ Resources:
         S3Key: "my-lambda-code.jar"  # Replace with your jar file path
       Runtime: "java11.al2"
       Timeout: 15
+      Environment:
+        Variables:
+          SNS_TOPIC_ARN: !Ref MySNSTopic
 
   # Define the EventBridge (CloudWatch Events) rule to trigger the Lambda function
   MyScheduledRule:
