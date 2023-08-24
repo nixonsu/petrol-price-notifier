@@ -45,16 +45,16 @@ Resources:
     Type: "AWS::Lambda::Function"
     Properties:
       FunctionName: "PetrolPriceNotifier"
-      Handler: "com.nixonsu.RuntimeHandler"  # Replace with the actual package and handler class
+      Handler: "com.nixonsu.RuntimeHandler"
       Role:
         Fn::GetAtt:
           - "LambdaExecutionRole"
           - "Arn"
       Code:
-        S3Bucket: "petrol-price-notifier"  
+        S3Bucket: "petrol-price-notifier"
         S3Key: !Sub "petrol-price-notifier-${GitSHA}.jar"
       Runtime: "java17"
-      Timeout: 15
+      Timeout: 900
       Environment:
         Variables:
           SNS_TOPIC_ARN: !Ref LowestPetrolPriceSNS
@@ -67,8 +67,7 @@ Resources:
       ScheduleExpression: "cron(0 23 * * ? *)"
       State: "ENABLED"
       Targets:
-        -
-          Arn:
+        - Arn:
             Fn::GetAtt:
               - "PetrolPriceNotifierLambda"
               - "Arn"
