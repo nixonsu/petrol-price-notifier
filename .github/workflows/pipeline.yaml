@@ -74,7 +74,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: packaged-template
-          path: ./ops/deployment/packaged-template.yaml
+          path: ./ops/deployment
 
       - name: Deploy to AWS
         run: ./ops/scripts/deploy.sh
