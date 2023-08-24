@@ -14,5 +14,5 @@ else
   # Create S3 bucket to store project jar
   aws s3api create-bucket \
   --bucket petrol-price-notifier \
-  --create-bucket-configuration LocationConstraint=${AWS_DEFAULT_REGION}
+  --create-bucket-configuration LocationConstraint=ap-southeast-2
 fi
