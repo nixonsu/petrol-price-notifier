@@ -7,7 +7,6 @@ plugins {
 }
 
 group = "com.nixonsu"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -39,7 +38,6 @@ application {
 tasks {
     shadowJar {
         archiveBaseName.set("petrol-price-notifier")
-        archiveVersion.set("1.0-SNAPSHOT")
         archiveClassifier.set("")
     }
 }

@@ -1,3 +1,8 @@
+Parameters:
+  GitSHA:
+    Description: The Git SHA for correlating the deployed code
+    Type: String
+
 Resources:
   # Define the SNS Topic
   LowestPetrolPriceSNS:
@@ -46,8 +51,8 @@ Resources:
           - "LambdaExecutionRole"
           - "Arn"
       Code:
-        S3Bucket: "petrol-price-notifier"  # Replace with your S3 bucket name
-        S3Key: "petrol-price-notifier-1.0-SNAPSHOT.jar"  # Replace with your jar file path
+        S3Bucket: "petrol-price-notifier"  
+        S3Key: !Sub "petrol-price-notifier-${GitSHA}.jar"
       Runtime: "java17"
       Timeout: 15
       Environment:
