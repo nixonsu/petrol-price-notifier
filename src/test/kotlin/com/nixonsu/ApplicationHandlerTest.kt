@@ -5,6 +5,7 @@ import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
 import com.nixonsu.exceptions.PetrolPriceNotFoundException
 import com.nixonsu.services.PetrolPriceService
+import com.nixonsu.utils.makeSmsMessage
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -22,8 +23,13 @@ class ApplicationHandlerTest {
     @Test
     fun `Given petrol price is retrieved successfully then publish to sns`() {
         // Given
-        val expectedPublishRequest = PublishRequest(snsTopicArn, "Lowest price for U91 today: ${160.0}")
+        val expectedMessage = makeSmsMessage(mapOf(
+            "Lowest" to 160.0,
+            "General" to 170.0
+        ))
+        val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
         every { petrolPriceService.getLowestU91PriceInAustralia() } returns 160.0
+        every { petrolPriceService.getU91PriceForSpecificStation() } returns 170.0
 
         // When
         subject.handle(emptyMap(), context)
