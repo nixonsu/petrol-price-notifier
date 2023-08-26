@@ -5,6 +5,7 @@ import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
+import com.nixonsu.clients.ElevenSevenClient
 import com.nixonsu.services.PetrolPriceService
 import java.net.http.HttpClient
 
@@ -14,7 +15,8 @@ class RuntimeHandler : RequestHandler<Map<String, Any>, String> {
         val client = HttpClient.newBuilder()
             .followRedirects(HttpClient.Redirect.ALWAYS)
             .build()
-        val petrolPriceService = PetrolPriceService(client)
+        val elevenSevenClient = ElevenSevenClient(client)
+        val petrolPriceService = PetrolPriceService(elevenSevenClient)
         val snsClient: AmazonSNS = AmazonSNSClientBuilder.standard()
             .withRegion(Regions.AP_SOUTHEAST_2)
             .build()

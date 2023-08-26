@@ -1,5 +1,6 @@
 package com.nixonsu.services
 
+import com.nixonsu.clients.ElevenSevenClient
 import io.mockk.every
 import io.mockk.mockk
 import org.apache.http.client.HttpResponseException
@@ -13,7 +14,8 @@ import java.net.http.HttpResponse
 
 class PetrolPriceServiceTest {
     private val httpClient = mockk<HttpClient>()
-    private val subject = PetrolPriceService(httpClient)
+    private val elevenSevenClient = ElevenSevenClient(httpClient)
+    private val subject = PetrolPriceService(elevenSevenClient)
 
     @Test
     fun `Given request is successful then return correct price`() {
