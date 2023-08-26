@@ -3,7 +3,7 @@ package com.nixonsu.models
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class PetrolPriceResponse(
+data class ElevenSevenResponse(
     val updated: Long,
     val regions: List<Region>
 )
