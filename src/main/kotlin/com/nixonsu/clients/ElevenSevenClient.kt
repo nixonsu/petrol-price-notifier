@@ -32,8 +32,7 @@ class ElevenSevenClient(private val httpClient: HttpClient) {
     }
 
     companion object {
-        const val ELEVEN_SEVEN_URL: String = "https://projectzerothree.info/api.php?format=json"
+        const val ELEVEN_SEVEN_URL = "https://projectzerothree.info/api.php?format=json"
         val objectMapper: ObjectMapper = ObjectMapper().registerModule(KotlinModule())
     }
-
 }
