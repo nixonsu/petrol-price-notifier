@@ -14,7 +14,9 @@ import java.util.zip.GZIPInputStream
 class PetrolSpyClient(private val httpClient: HttpClient) {
     fun getSpecificStationPricesHtml(): String {
         val request = makePetrolSpyGetRequest()
+        println("Making GET request: $request")
         val response = httpClient.send(request, HttpResponse.BodyHandlers.ofByteArray())
+        println("Received GET response: $response")
 
         if (response.statusCode() == 200) {
             return decodeContent(response)
