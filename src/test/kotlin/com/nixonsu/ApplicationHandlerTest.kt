@@ -3,7 +3,7 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.exceptions.PetrolPriceNotFoundException
+import com.nixonsu.exceptions.PetrolPriceCouldNotBeDeterminedException
 import com.nixonsu.services.PetrolPriceService
 import com.nixonsu.utils.makeSmsMessage
 import io.mockk.every
@@ -23,10 +23,12 @@ class ApplicationHandlerTest {
     @Test
     fun `Given petrol price is retrieved successfully then publish to sns`() {
         // Given
-        val expectedMessage = makeSmsMessage(mapOf(
-            "Lowest" to 160.0,
-            "General" to 170.0
-        ))
+        val expectedMessage = makeSmsMessage(
+            mapOf(
+                "7-Eleven" to 160.0,
+                "Liberty" to 170.0
+            )
+        )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
         every { petrolPriceService.getLowestU91PriceInAustralia() } returns 160.0
         every { petrolPriceService.getU91PriceForSpecificStation() } returns 170.0
@@ -39,16 +41,28 @@ class ApplicationHandlerTest {
     }
 
     @Test
-    fun `Given petrol price is not retrieved successfully then throw PetrolPriceNotFoundException`() {
+    fun `Given petrol price is not retrieved successfully then still publish to sns`() {
         // Given
-        every { petrolPriceService.getLowestU91PriceInAustralia() } throws HttpResponseException(500, "Internal Server Error")
+        every { petrolPriceService.getLowestU91PriceInAustralia() } throws PetrolPriceCouldNotBeDeterminedException(
+            "Error retrieving petrol prices",
+            null
+        )
+        every { petrolPriceService.getU91PriceForSpecificStation() } throws PetrolPriceCouldNotBeDeterminedException(
+            "Error retrieving petrol prices",
+            null
+        )
+        val expectedMessage = makeSmsMessage(
+            mapOf(
+                "7-Eleven" to null,
+                "Liberty" to null
+            )
+        )
+        val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
 
         // When
-        assertThrows<PetrolPriceNotFoundException> {
-            subject.handle(emptyMap(), context)
-        }
+        subject.handle(emptyMap(), context)
 
         // Then
-        verify(exactly = 0) { snsClient.publish(any()) }
+        verify(exactly = 1) { snsClient.publish(expectedPublishRequest) }
     }
 }

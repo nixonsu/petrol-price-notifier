@@ -15,7 +15,9 @@ class ElevenSevenClient(private val httpClient: HttpClient) {
     fun getLowestSevenElevenPetrolPricesInAustralia(): ElevenSevenResponse {
         val request = makeElevenSevenGetHttpRequest()
 
+        println("Calling 11-Seven API: $request")
         val response = httpClient.send(request, HttpResponse.BodyHandlers.ofString())
+        println("Received response: $response")
 
         if (response.statusCode() != 200) {
             throw HttpResponseException(response.statusCode(), response.reasonPhrase())

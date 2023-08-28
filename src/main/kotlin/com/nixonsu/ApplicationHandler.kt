@@ -3,10 +3,9 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.exceptions.PetrolPriceNotFoundException
+import com.nixonsu.exceptions.PetrolPriceCouldNotBeDeterminedException
 import com.nixonsu.services.PetrolPriceService
 import com.nixonsu.utils.makeSmsMessage
-import org.apache.http.client.HttpResponseException
 
 class ApplicationHandler(
     private val petrolPriceService: PetrolPriceService,
@@ -14,35 +13,35 @@ class ApplicationHandler(
     private val snsTopicArn: String
 ) {
     fun handle(event: Map<String, Any>, context: Context) {
-        val logger = context.logger
+        println("Received Event:\n${event}")
 
-        logger.log("Received Event:\n${event}")
-
-        logger.log("Calling petrol price service...")
+        println("Calling petrol price service...")
 
         val lowestPriceInAustralia = try {
             petrolPriceService.getLowestU91PriceInAustralia()
-        } catch (e: HttpResponseException) {
-            throw PetrolPriceNotFoundException("Error retrieving petrol price.", e)
+        } catch (e: PetrolPriceCouldNotBeDeterminedException) {
+            println("Error retrieving lowest U91 price")
+            null
         }
-            ?: throw PetrolPriceNotFoundException(
-                "Error retrieving petrol price - it is null. Petrol price api contract may have changed.",
-                null
-            )
 
-        val priceForSpecificStation = petrolPriceService.getU91PriceForSpecificStation()
+        val priceForSpecificStation = try {
+            petrolPriceService.getU91PriceForSpecificStation()
+        } catch (e: PetrolPriceCouldNotBeDeterminedException) {
+            println("Error retrieving specific U91 price")
+            null
+        }
 
         val stationToPrice = mapOf(
-            "Lowest" to lowestPriceInAustralia,
-            "General" to priceForSpecificStation
+            "7-Eleven" to lowestPriceInAustralia,
+            "Liberty" to priceForSpecificStation
         )
 
         val message = makeSmsMessage(stationToPrice)
 
-        logger.log("Publishing to SNS...")
         val publishRequest = PublishRequest(snsTopicArn, message)
+        println("Publishing to SNS with publish request:\n$publishRequest")
         val publishResponse = snsClient.publish(publishRequest)
 
-        logger.log("Message published, message ID: ${publishResponse.messageId}")
+        println("Message published, message ID: ${publishResponse.messageId}")
     }
 }

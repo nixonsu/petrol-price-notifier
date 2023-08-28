@@ -2,6 +2,7 @@ package com.nixonsu.services
 
 import com.nixonsu.clients.ElevenSevenClient
 import com.nixonsu.clients.PetrolSpyClient
+import com.nixonsu.exceptions.PetrolPriceCouldNotBeDeterminedException
 import io.mockk.every
 import io.mockk.mockk
 import org.apache.http.client.HttpResponseException
@@ -61,7 +62,7 @@ class PetrolPriceServiceTest {
         }
 
         @Test
-        fun `Given request is not successful then throw HttpResponseException`() {
+        fun `Given request is not successful then throw PetrolPriceCouldNotBeDeterminedException`() {
             // Given
             val mockResponse: HttpResponse<String> = mockk()
             every { mockResponse.body() } returns ""
@@ -71,11 +72,9 @@ class PetrolPriceServiceTest {
             } returns mockResponse
 
             // When, Then
-            val exception = assertThrows<HttpResponseException> {
+            assertThrows<PetrolPriceCouldNotBeDeterminedException> {
                 subject.getLowestU91PriceInAustralia()
             }
-            assertEquals(500, exception.statusCode)
-            assertEquals("Internal Server Error", exception.reasonPhrase)
         }
     }
 }

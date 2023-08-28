@@ -1,8 +1,6 @@
 package com.nixonsu.clients
 
 import com.nixonsu.services.PetrolPriceService
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Element
 import org.junit.jupiter.api.Test
 import java.net.http.HttpClient
 
@@ -18,7 +16,7 @@ class PetrolSpyClientTest {
         val elevenSevenClient = ElevenSevenClient(client)
 
         val petrolService = PetrolPriceService(elevenSevenClient, petrolSpyClient)
-        
+
         println(petrolService.getU91PriceForSpecificStation())
 
 
