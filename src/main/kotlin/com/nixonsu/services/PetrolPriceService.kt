@@ -23,11 +23,23 @@ class PetrolPriceService(
 
     fun getU91PriceForLiberty(): Double? {
         try {
-            val petrolSpyResponse = petrolSpyClient.getSpecificStationPricesHtml()
+            val petrolSpyHtmlResponse = petrolSpyClient.getLibertyStationPricesHtml()
 
-            return extractU91PriceFromHtml(petrolSpyResponse)
+            return extractU91PriceFromHtml(petrolSpyHtmlResponse)
         } catch (e: Exception) {
             logger.warn("Error retrieving U91 price of Liberty", e)
+        }
+
+        return null
+    }
+
+    fun getU91PriceForCostco(): Double? {
+        try {
+            val petrolSpyHtmlResponse = petrolSpyClient.getCostcoStationPricesHtml()
+
+            return extractU91PriceFromHtml(petrolSpyHtmlResponse)
+        } catch (e: Exception) {
+            logger.warn("Error retrieving U91 price of Costco", e)
         }
 
         return null

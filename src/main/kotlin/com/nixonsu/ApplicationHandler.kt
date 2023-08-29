@@ -21,9 +21,12 @@ class ApplicationHandler(
 
         val libertyPrice = petrolPriceService.getU91PriceForLiberty()
 
+        val costcoPrice = petrolPriceService.getU91PriceForCostco()
+
         val stationToPrice = mapOf(
             "7-Eleven" to sevenElevenPrice,
-            "Liberty" to libertyPrice
+            "Liberty" to libertyPrice,
+            "Costco" to costcoPrice
         )
 
         logger.info("Finished fetching petrol prices")
