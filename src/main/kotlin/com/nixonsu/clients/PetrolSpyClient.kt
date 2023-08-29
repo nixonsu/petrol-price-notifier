@@ -2,6 +2,7 @@ package com.nixonsu.clients
 
 import com.nixonsu.extensions.reasonPhrase
 import org.apache.http.client.HttpResponseException
+import org.slf4j.LoggerFactory
 import java.io.ByteArrayInputStream
 import java.io.InputStreamReader
 import java.net.URI
@@ -14,9 +15,9 @@ import java.util.zip.GZIPInputStream
 class PetrolSpyClient(private val httpClient: HttpClient) {
     fun getSpecificStationPricesHtml(): String {
         val request = makePetrolSpyGetRequest()
-        println("Calling PetrolSpy: $request")
+        logger.info("Calling PetrolSpy: {}", request)
         val response = httpClient.send(request, HttpResponse.BodyHandlers.ofByteArray())
-        println("Received GET response: $response")
+        logger.info("Received response: {}", response)
 
         if (response.statusCode() == 200) {
             return decodeContent(response)
@@ -50,6 +51,7 @@ class PetrolSpyClient(private val httpClient: HttpClient) {
 
 
     companion object {
+        private val logger = LoggerFactory.getLogger(PetrolSpyClient::class.java)
         private const val PETROL_SPY_SPECIFIC_STATION_URL =
             "https://petrolspy.com.au/map/station/58ae945fe4b0435d6f15971b"
     }

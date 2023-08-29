@@ -18,6 +18,8 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.12.3")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3")
     implementation("org.jsoup:jsoup:1.16.1")
+    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("org.slf4j:slf4j-simple:1.7.30")
     runtimeOnly("com.amazonaws:aws-lambda-java-log4j2:1.5.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

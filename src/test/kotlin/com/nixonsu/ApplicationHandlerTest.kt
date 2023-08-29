@@ -3,15 +3,12 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.exceptions.PetrolPriceCouldNotBeDeterminedException
 import com.nixonsu.services.PetrolPriceService
 import com.nixonsu.utils.makeSmsMessage
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.apache.http.client.HttpResponseException
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 
 class ApplicationHandlerTest {
     private val petrolPriceService = mockk<PetrolPriceService>()
@@ -21,17 +18,19 @@ class ApplicationHandlerTest {
     private val context = mockk<Context>(relaxed = true)
 
     @Test
-    fun `Given petrol price is retrieved successfully then publish to sns`() {
+    fun `Given petrol prices are retrieved successfully then publish message to sns`() {
         // Given
+        val sevenElevenPrice = 160.0
+        val libertyPrice = 170.0
         val expectedMessage = makeSmsMessage(
             mapOf(
-                "7-Eleven" to 160.0,
-                "Liberty" to 170.0
+                "7-Eleven" to sevenElevenPrice,
+                "Liberty" to libertyPrice
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
-        every { petrolPriceService.getLowestU91PriceInAustralia() } returns 160.0
-        every { petrolPriceService.getU91PriceForSpecificStation() } returns 170.0
+        every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns sevenElevenPrice
+        every { petrolPriceService.getU91PriceForLiberty() } returns libertyPrice
 
         // When
         subject.handle(emptyMap(), context)
@@ -41,16 +40,10 @@ class ApplicationHandlerTest {
     }
 
     @Test
-    fun `Given petrol price is not retrieved successfully then still publish to sns`() {
+    fun `Given petrol prices are not retrieved successfully then still publish message to sns`() {
         // Given
-        every { petrolPriceService.getLowestU91PriceInAustralia() } throws PetrolPriceCouldNotBeDeterminedException(
-            "Error retrieving petrol prices",
-            null
-        )
-        every { petrolPriceService.getU91PriceForSpecificStation() } throws PetrolPriceCouldNotBeDeterminedException(
-            "Error retrieving petrol prices",
-            null
-        )
+        every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns null
+        every { petrolPriceService.getU91PriceForLiberty() } returns null
         val expectedMessage = makeSmsMessage(
             mapOf(
                 "7-Eleven" to null,

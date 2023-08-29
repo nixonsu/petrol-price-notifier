@@ -4,8 +4,8 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import java.util.regex.Pattern
 
-fun extractU91PriceFromHtml(petrolSpyResponse: String): String? {
-    val document = Jsoup.parse(petrolSpyResponse)
+fun extractU91PriceFromHtml(petrolSpyHtmlResponse: String): Double? {
+    val document = Jsoup.parse(petrolSpyHtmlResponse)
     val pricesList: Element? = document.getElementById("prices-list")
 
     if (pricesList != null) {
@@ -14,7 +14,7 @@ fun extractU91PriceFromHtml(petrolSpyResponse: String): String? {
             val matcher = pattern.matcher(price.text())
 
             if (matcher.find()) {
-                return matcher.group(1)
+                return matcher.group(1).toDouble()
             }
         }
     }

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        #graphs-button,#top-points-button{padding:0 7px;float:left}#drawer-button div,#graphs-button div,#suburb-cancel-search div,#top-points-button div{background-size:cover;webkit-background-size:cover}#spy-container,.page{background-color:#fff}#content,body{background-color:#5eb1f3}#content a,.button{text-decoration:none}#content,.desktop-view #content-container ul li{font-size:17.5px}@font-face{font-family:Oswald;font-style:normal;font-weight:400;src:url(/css/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZSSUhiCXAA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}body{font-family:source-sans-pro,sans-serif}*{-webkit-tap-highlight-color:transparent}p{padding:0;margin:0;line-height:1.2em}body.mobile-view{background-color:#646666;overflow:hidden}#spy-container{display:block;position:absolute;height:auto;width:auto;bottom:6.7vh;top:0;left:0;right:0;margin:0;overflow:hidden;float:left;border:1px solid #646666;border-radius:5px 5px 0 0}input,textarea{background-color:#f7f7f7;border:1px solid #a5a8a8;border-radius:6px;color:#454545;font-size:19px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.page-content{position:absolute!important;top:54px;bottom:0;left:0;right:0;font:18px "Source Sans",helvetica,arial,sans-serif;color:#454545;overflow-y:auto;-webkit-overflow-scrolling:touch}#drawer-button,#logo-right,.button{overflow:hidden}#map-canvas{z-index:0}.page{position:absolute;top:0;left:0;right:0;bottom:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}div.clear{clear:both}.button{border:none;background-color:#288edf;color:#fff;padding:0 .9rem;font-size:22px;line-height:2.8rem;border-radius:6px;-moz-box-sizing:border-box;-moz-user-select:none;cursor:default;text-overflow:ellipsis;white-space:nowrap;margin:0;font-family:source-sans-pro,sans-serif}#mobile-footer,.navigation-bar{right:0;background-color:#646666;left:0;position:absolute}.navigation-bar{top:0;height:53px;padding:0 4px 0 6px;border-bottom:1px solid #333434}.navigation-bar .button{height:47px;margin-top:3px;box-shadow:inset 0 1px rgba(255,255,255,.36);float:right}#graphs-button div{background-image:url("/img/graph_bg.svg");width:38px;height:38px}#top-points-button{margin-left:5px;margin-right:4px}#top-points-button div{background-image:url("/img/top_bg.svg");width:38px;height:38px}#drawer-button{margin-right:5px;margin-left:1px;padding:0 9px}#drawer-button div{background-image:url("/img/menu_bg.svg");width:31px;height:31px}#search-suburb{margin-top:8px;height:38px;width:100%;padding-left:30px;padding-right:0;background-image:url("/img/search.svg");background-position:8px center;background-repeat:no-repeat;background-size:18px;border-radius:6px 0 0 6px;border:none;-webkit-appearance:textfield}#suburb-cancel-search{margin-top:8px;height:38px;margin-right:7px;padding:0 10px;float:left;border-radius:0 6px 6px 0}#suburb-cancel-search div{background-image:url("/img/close_bg.svg");width:22px;height:22px}#suburb-list-container{display:none;z-index:2;background-color:#fff}.mobile-view #mobile-footer{display:inline-flex}#social-logo-container a,.desktop-view .desktop-content,.mobile-view .mobile-content{display:block}.desktop-view li.desktop-content,.mobile-view li.mobile-content{display:list-item}.desktop-view span.desktop-content,.mobile-view span.mobile-content{display:inline}.aus .nz,.desktop-view #content-close,.desktop-view .mobile-content,.mobile-view #petrolspy-logo,.mobile-view #top-banner-ad,.mobile-view .desktop-content,.nz .aus{display:none}#mobile-footer{display:none;bottom:0;height:6.7vh;z-index:9999}.footer-logo img{height:6.5vh;width:auto}.desktop-view #spy-container{top:100px;right:44%;bottom:0;margin:5px 5px 10px 10px}.desktop-view #top-banner-ad{display:inline-block;width:56%}.mobile-view.tablet-view #top-banner-ad{display:inline-block;width:100%}.tablet-view #spy-container{top:100px}.button:active{background-color:#1976c3;box-shadow:inset 0 1px rgba(0,0,0,.12)!important}.button:hover{cursor:pointer;background-color:#4ca1e4}#map-canvas .map-button:active{background-color:#e0e0e0!important}#map-canvas .map-button:hover,.dropDownControl:hover{background-color:#f3f3f3}.list-item:not(.list-item-disabled):hover{cursor:pointer;background-color:#4ca1e4!important;color:#f7f7f7}.stations-list-item:not(.list-item-disabled):hover{border-top:2px solid #4ca1e4;border-bottom:2px solid #4ca1e4}.link-button:hover{color:#4ca1e4;cursor:pointer}#country-dropdown{width:100px}#search-suburb:hover{background-color:#ededed}.desktop-view #content-background{display:block;width:44%}#content-background{display:none;position:absolute;top:0;right:0;bottom:0;overflow-y:auto}.mobile-view #content-background{left:0;z-index:10000;opacity:.9}#content-header{user-select:none}.mobile-view #content-header{padding-top:.2vh;padding-bottom:1.5vh}.desktop-view #content-header{padding-bottom:30px}.mobile-view #content{margin:30vh 4vw 3vh;padding-bottom:1vh;border-radius:5vw;overflow-y:scroll;position:absolute;right:0;top:0;left:0}#content{color:#fcfcfc;font-family:verdana}.desktop-view #content-container{padding-left:20px;padding-right:20px;margin:15px auto;max-width:560px}.mobile-view #content-container{padding-top:2vw}#content-container{padding-left:3.5vw;padding-right:3.4vw;margin:0 auto 1.2vw;text-align:left}.desktop-view #petrolspy-logo{height:130px}#petrolspy-logo{float:left}#main-station-list-header{color:#f3f3f3;font-size:17px;margin:0 0 .5vh;line-height:1em}#find-locations,.mobile-view .dynamic-content{font-size:3.4vw}#dynamic-content,.dynamic-content{margin-bottom:1vh}.mobile-view #main-station-list-header{font-size:3.6vw}#main-station-list-table{width:100%;line-height:1.1em}#main-station-list-table tr{vertical-align:top}#main-station-list-table th{color:#f3f3f3}#dynamic-content2{margin-bottom:.5vh}.dynamic-content{font-size:16.5px}.desktop-view #social-logo-img{height:46px}#social-logo-img{height:9vw}#content a{color:#e5e5e5}#store-links{text-align:center;margin-bottom:1.6vh}.desktop-view #content-container h1,.desktop-view #content-container h2{line-height:1em;font-weight:700}#content-container h1,#content-container h2{font-family:Oswald,sans-serif;line-height:1.15em;font-weight:400;text-align:right;margin:0;padding:0 11vw 0 0}.desktop-view #content-container h1{padding:3px 57px 0 0;font-size:46.4px}#content-container h1{font-size:7.5vw}.desktop-view #content-container h2{padding:10px 57px 0 0;font-size:37.5px}#content-container h2{font-size:6.8vw}#content-container ul{margin-top:0;margin-bottom:1.7vh;padding-left:1.4em}.desktop-view #content-container ul{margin-bottom:2vh}#prices-list{margin-bottom:.6vh!important}#content-container ul li{line-height:1.3;font-size:3.6vw}.desktop-view #social-logo-container{padding-top:5px}#social-logo-container{float:right;padding-top:0}#content-close{padding-top:1vh;padding-left:1vh;position:absolute;cursor:pointer;z-index:10}#content-close div{background-image:url("/img/close_bg.svg");height:5.1vh;width:5.1vh;margin:.4vh 0 .4vh .8vw;background-size:auto;webkit-background-size:auto}.desktop-view #find-locations{font-size:17px;line-height:1.1em}#find-locations{text-align:center;margin-bottom:1.2vh;line-height:1em}.desktop-view .emailaddress{font-size:17px}.emailaddress{font-size:3.8vw;color:#f3f3f3!important}.desktop-view #disclaimer{font-size:9px;line-height:1.2em}#disclaimer{font-size:2.5vw;line-height:1em;padding-top:.4vh}#content a:hover{color:#fafafa}a img{border:0}.mobile-view #img-android{width:36vw;height:auto}.mobile-view #img-ios{width:43vw;height:auto}.mobile-view .copyright-notice{font-size:3.3vw}.desktop-view .copyright-notice{font-size:14px;text-align:center}
+    </style>
+
+    <link rel='shortcut icon' href='/img-web/favicon.ico' type='image/x-icon'>
+    <link rel="canonical" href="https://petrolspy.com.au/map/station/58ae945fe4b0435d6f15971b">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+    <meta property="og:site_name" content="Petrol Spy - Fuel Near Me">
+    <title>Springvale Convenience Store - Fuel Prices Map</title>
+    <meta name="description" content="Today's petrol prices at Springvale Convenience Store: Unleaded E10 197.7, Unleaded 199.7, U95 189.9, U98 214.9, Diesel 209.7, LPG 99.9, TruckDSL 179.7" />
+
+    <script async data-main='/js/main-web.js?36' src='/js/require.js'></script>
+
+    <link rel="preload" href="/css/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZSSUhiCXAA.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/css/styles.css?3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="/js/main-web.js?36" rel="preload" as="script">
+    <link rel="preload" href="https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <!-- udpate in source code as well -->
+    <link href="https://unpkg.com/maplibre-gl@3.2.1/dist/maplibre-gl.js" rel="preload" as="script">
+    <link rel="preload" href="https://cdn.protomaps.com/fonts/pbf/NotoSans-Regular/0-255.pbf" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.protomaps.com/fonts/pbf/NotoSans-Regular/8192-8447.pbf" as="fetch" crossorigin="anonymous">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RKVL0VT4C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0RKVL0VT4C');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5849287645809828" crossorigin="anonymous"></script>
+</head>
+
+<body class="mobile-view aus">
+<script>
+    // redirect from hashbang URLs
+    if (window.location.hash[0] == '#') {
+        // remove hashbang no matter what
+        if (window.location.hash[1] == '!')
+            window.location = window.location.hash.substring(2).toLowerCase();
+        // stop IE9 infinite redirect loop since that somehow works using hashes and not pushState, so leave the hash
+        else if (window.navigator.userAgent.indexOf('MSIE ') > 0 && !window.atob)
+            /* do nothing */;
+        else
+            // remove hash if someone sends you a link from IE9 that has a hash but no bang
+            window.location = window.location.hash.substring(1).toLowerCase();
+    }
+    const isNZ = ((new Date()).getTimezoneOffset()/60 <= -12);
+    const isMobile = navigator.userAgent.match(/iPhone|iPad|android|Windows Phone|BlackBerry/i);
+    if (!isMobile) {
+        if (isNZ)
+            document.body.className = "desktop-view nz";
+        else
+            document.body.className = "desktop-view aus";
+    }
+    else if (window.innerWidth > 480) { // Tablet devices
+        if (isNZ)
+            document.body.className = "mobile-view tablet-view nz";
+        else
+            document.body.className = "mobile-view tablet-view aus";
+    } else if (isNZ)
+        document.body.className = "mobile-view nz";
+
+    let globalLocationData = null;
+    let globalSite = {"location":{"x":145.138354,"y":-37.960508}};
+</script>
+
+<main>
+    <div id="content-background">
+        <div id="content">
+            <div id="content-close"><div></div></div>
+            <div id="content-container">
+                <header>
+                    <div id="content-header">
+                        <img id="petrolspy-logo" alt="Petrol Spy logo" src="/img-web/web_logo.png">
+                        <div id="logo-right">
+                            <div id="social-logo-container">
+                                <a data-bypass href="https://www.facebook.com/petrolspy" target="_blank">
+                                    <img id="social-logo-img" alt="Facebook logo" src="/img-web/facebook.png" />
+                                </a>
+                                <!--<a data-bypass href="https://twitter.com/petrolspy" target="_blank">
+                                    <img id="social-logo-img" src="/img-web/twitter.png" />
+                                </a>-->
+                            </div>
+                            <h1>PetrolSpy Aus/NZ</h1><h2>Springvale Convenience Store</h2>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </header>
+                <section>
+                    <section>
+                        <ul>
+                            <li><p>Chance to <a data-bypass="" href="/drawtext.html" target="_blank">win a $25 fuel card</a> every day</p></li>
+                            <li><p>Historical<span class="desktop-content"> Unleaded & E10</span> fuel <a href="/map/graph/" class="graph-link">price cycle graphs</a></p></li>
+                            <li><p>FREE fuel app for Australia & NZ!</p></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p class="desktop-content" id="store-links">
+                            <a data-bypass href="https://itunes.apple.com/au/app/petrol-spy-australia/id826254811" target="_blank">
+                                <img id="img-ios" alt="Download Petrol Spy Fuel App from the App Store" src="/img-web/appstore.png" width="196" height="60">
+                            </a>
+                            <a data-bypass href="https://play.google.com/store/apps/details?id=com.pineconesoft.petrolspy" target="_blank">
+                                <img id="img-android" alt="Get Petrol Spy Fuel App on Google Play" src="/img-web/googleplay.png" width="172" height="60">
+                            </a>
+                        </p>
+                    </section>
+                    <section>
+                        <div id="dynamic-content2" class="dynamic-content"><article><h3 id='main-station-list-header'>Today's fuel prices at Springvale Convenience Store:</h3><ul id="prices-list"><li>Unleaded E10 197.7</li><li>Unleaded 91 199.7</li><li>Premium U95 189.9</li><li>Premium U98 214.9</li><li>Diesel 209.7</li><li>LPG 99.9</li><li>TruckDSL 179.7</li></ul></article><p style="margin-bottom:1.5vh"><span style="color:#f3f3f3">Address</span> 745 Heatherton Rd Springvale VIC 3171; <span style="color:#f3f3f3">Phone Number</span> (03) 9558 5522</p></div>
+                        <div id="dynamic-content" class="dynamic-content"></div>
+                        <p id="find-locations">Service stations near me and cheap local fuel finder for Australia and New Zealand</p>
+                    </section>
+
+                    <!-- Petrol Spy Right Bottom, isMobile is taking care of loading -->
+                    <ins class="adsbygoogle desktop-content" style="float:left;width:300px;height:250px;padding-right:22px;" data-ad-client="ca-pub-5849287645809828" data-ad-slot="9475980571" data-ad-format="square"></ins>
+                    <footer>
+                        <!-- shorten the email address when it doesn't fit so it wouldn't move below the ad banner, same for the copyright -->
+                        <div class="emailaddress" style="text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:normal;">support@pineconesoft.com</div>
+
+                        <p class="desktop-content" style="font-size:15px;padding-top:1.8vh;"> <b style="font-size:16px;">Full API access</b> for only <b>250 AUD</b>/month - support our work, <a data-bypass href="mailto:support@pineconesoft.com?subject=Petrol%20Spy%20API%20access" target="_blank">email</a> now!</p>
+
+                        <div style="padding-top:1.1vh;line-height:1.1em;">
+                            <div class="copyright-notice" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:normal;">©2019 Pinecone Software PtyLtd</div>
+                        </div>
+
+                        <div id="disclaimer"><a data-bypass href="/termsofuse.html" target="_blank"><b>TERMS OF USE</b></a></div>
+                    </footer>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div id="spy-container">
+            <!--[if lte IE 9]>
+            <div style="z-index:2;font-size:25px;"><b>You need a newer browser to see the petrol prices map.<br>Please download one form <a href="http://browsehappy.com/" target="_blank">here</a>.</b></div>
+            <![endif]-->
+            <div id="map-page">
+                <div class="navigation-bar" style="padding-right:0;">
+                    <div style="float:right">
+                        <button id="suburb-cancel-search" class="button"><div></div></button>
+                        <span id="navigation-buttons">
+                      <button id="graphs-button" class="button"><div></div></button>
+                      <button id="top-points-button" class="button"><div></div></button>
+                      <button id="drawer-button" class="button"><div></div></button>
+     	            </span>
+                        <span id="suburb-search-controls" style="display:none;"></span>
+                    </div>
+                    <div style="overflow:hidden;">
+                        <input id="search-suburb" type="search" placeholder="suburb or postcode" autocomplete="off" >
+                    </div>
+                </div>
+                <div id="suburb-list-container" class="page-content">
+                    <!-- we need to separate suburb-list-container and suburb-list to show the spinner
+                         as otherwise it would disappear every time we render -->
+                    <div id="suburb-list" class="list"></div>
+                </div>
+                <div id="map-canvas" class="page-content"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div id="mobile-footer">
+                <div style="display:inline-flex;"
+                     onclick="document.getElementById('content-background').style.display='block';localStorage.setItem('infoclosed', 'false');">
+                    <img style="height:53px;height:5.8vh;width:43px;width:4.73vh;padding:5px;padding:0.45vh 1.1vw 0 0.8vw;" alt="Petrol Spy logo" src="/img-web/web_logo.png" />
+                    <h3 style="color:#FCFCFC;line-height:70px;line-height:6vh;padding:0;margin:0;font-size:48px;font-size:4.9vh;font-weight:400;font-family:'Oswald',sans-serif;">PetrolSpy</h3>
+                </div>
+                <p style="margin-left:auto;padding:5px;padding:0.1vh 0.2vw 0 0.5vw;">
+                    <a id="footer-apple-logo" class="footer-logo" style="display:none" data-bypass href="https://itunes.apple.com/au/app/petrol-spy-australia/id826254811" target="_blank">
+                        <img alt="Download Petrol Spy Fuel App from the App Store" src="/img-web/appstore.png" height="60">
+                    </a>
+                    <a id="footer-android-logo" class="footer-logo" style="display:none" data-bypass href="https://play.google.com/store/apps/details?id=com.pineconesoft.petrolspy" target="_blank">
+                        <img alt="Get Petrol Spy Fuel App on Google Play" src="/img-web/googleplay.png" height="60">
+                    </a>
+                </p>
+                <script>
+                    if (/android/i.test(navigator.userAgent))
+                        document.getElementById('footer-android-logo').style.display = 'block';
+                    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
+                        document.getElementById('footer-apple-logo').style.display = 'block';
+                </script>
+            </div>
+        </footer>
+    </section>
+</main>
+
+<!-- Petrol Spy Left Top Lrg, isMobile is taking care of loading -->
+<!-- overflow-y hides odd vertical scrollbar in IE, overflow-x is for when the window gets resized -->
+<ins id="top-banner-ad" class="adsbygoogle" style="overflow:hidden;height:90px;" data-ad-client="ca-pub-5849287645809828" data-ad-slot="3448157372"></ins>
+
+<script>
+    if (isMobile) {
+        var contentBackground = document.getElementById('content-background');
+        contentBackground.onclick = function(e) {
+            contentBackground.style.display='none';
+            // can also be used for showing ads on return
+            localStorage.setItem('infoclosed', 'true');
+        };
+        if (!localStorage.getItem('infoclosed') || localStorage.getItem('infoclosed') == 'false')
+            contentBackground.style.display = 'block';
+    } else {
+        // can be used for showing ads on return
+        localStorage.setItem('infoclosed', 'true');
+        // yes, that does need to get called for each unit
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+</script>
+</body>
+
+</html>
