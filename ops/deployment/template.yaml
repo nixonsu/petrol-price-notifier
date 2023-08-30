@@ -5,10 +5,10 @@ Parameters:
 
 Resources:
   # Define the SNS Topic
-  LowestPetrolPriceSNS:
+  PetrolPriceSNS:
     Type: "AWS::SNS::Topic"
     Properties:
-      TopicName: "LowestPetrolPriceNotifications"
+      TopicName: "PetrolPriceNotifications"
 
   # Define the Lambda execution role
   LambdaExecutionRole:
@@ -38,7 +38,7 @@ Resources:
                 Action:
                   - "sns:Publish"
                 Resource:
-                  Ref: "LowestPetrolPriceSNS"
+                  Ref: "PetrolPriceSNS"
 
   # Define the Lambda function
   PetrolPriceNotifierLambda:
@@ -57,7 +57,7 @@ Resources:
       Timeout: 900
       Environment:
         Variables:
-          SNS_TOPIC_ARN: !Ref LowestPetrolPriceSNS
+          SNS_TOPIC_ARN: !Ref PetrolPriceSNS
 
   # Define the EventBridge (CloudWatch Events) rule to trigger the Lambda function
   ScheduledRule:
