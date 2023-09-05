@@ -3,6 +3,8 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
+import com.nixonsu.enums.Station
+import com.nixonsu.enums.Station.*
 import com.nixonsu.services.PetrolPriceService
 import com.nixonsu.utils.makeSmsMessage
 import org.slf4j.LoggerFactory
@@ -24,9 +26,9 @@ class ApplicationHandler(
         val costcoPrice = petrolPriceService.getU91PriceForCostco()
 
         val stationToPrice = mapOf(
-            "7-Eleven" to sevenElevenPrice,
-            "Liberty" to libertyPrice,
-            "Costco" to costcoPrice
+            SEVEN_ELEVEN to sevenElevenPrice,
+            LIBERTY to libertyPrice,
+            COSTCO to costcoPrice
         )
 
         logger.info("Finished fetching petrol prices")

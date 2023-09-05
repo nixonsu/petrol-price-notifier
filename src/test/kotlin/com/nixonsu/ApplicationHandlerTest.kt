@@ -3,6 +3,7 @@ package com.nixonsu
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
+import com.nixonsu.enums.Station.*
 import com.nixonsu.services.PetrolPriceService
 import com.nixonsu.utils.makeSmsMessage
 import io.mockk.every
@@ -25,9 +26,9 @@ class ApplicationHandlerTest {
         val costcoPrice = 165.0
         val expectedMessage = makeSmsMessage(
             mapOf(
-                "7-Eleven" to sevenElevenPrice,
-                "Liberty" to libertyPrice,
-                "Costco" to costcoPrice
+                SEVEN_ELEVEN to sevenElevenPrice,
+                LIBERTY to libertyPrice,
+                COSTCO to costcoPrice
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
@@ -50,9 +51,9 @@ class ApplicationHandlerTest {
         every { petrolPriceService.getU91PriceForCostco() } returns null
         val expectedMessage = makeSmsMessage(
             mapOf(
-                "7-Eleven" to null,
-                "Liberty" to null,
-                "Costco" to null
+                SEVEN_ELEVEN to null,
+                LIBERTY to null,
+                COSTCO to null
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)

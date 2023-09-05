@@ -1,9 +1,23 @@
 package com.nixonsu.utils
 
-fun makeSmsMessage(stationToPrice: Map<String, Double?>): String {
+import com.nixonsu.enums.Station
+
+fun makeSmsMessage(stationToPrice: Map<Station, Double?>): String {
     val stringBuilder = StringBuilder()
 
-    val result = stationToPrice.entries.joinToString(separator = "\n") { "${it.key}: ${it.value ?: "N/A"}" }
+    val hasNonNullPrice = stationToPrice.any { it.value != null }
+
+    val lowestPriceStation = if (hasNonNullPrice) {
+        stationToPrice.minByOrNull { it.value ?: Double.POSITIVE_INFINITY }?.key
+    } else {
+        null
+    }
+
+    val result = stationToPrice.entries.joinToString(separator = "\n") { entry ->
+        val star = if (entry.key == lowestPriceStation) " ⭐" else ""
+        "${entry.key}: ${entry.value ?: "N/A"}$star"
+    }
+
     stringBuilder.append(result)
 
     return stringBuilder.toString()
