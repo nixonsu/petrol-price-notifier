@@ -14,8 +14,8 @@ fun makeSmsMessage(stationToPrice: Map<Station, Double?>): String {
     }
 
     val result = stationToPrice.entries.joinToString(separator = "\n") { entry ->
-        val star = if (entry.key == lowestPriceStation) "⭐" else ""
-        String.format("%-10s %-5s %3s", entry.key, entry.value ?: "N/A", star)
+        val star = if (entry.key == lowestPriceStation) " ⭐" else ""
+        "${entry.key}: ${entry.value ?: "N/A"}$star"
     }
 
     stringBuilder.append(result)

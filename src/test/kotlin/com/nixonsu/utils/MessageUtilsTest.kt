@@ -23,7 +23,7 @@ class MessageUtilsTest {
             val message = makeSmsMessage(stationToPrice)
 
             val expectedMessage =
-                "$SEVEN_ELEVEN   $sevenElevenPrice   ⭐\n$LIBERTY    $libertyPrice    \n$COSTCO     $costcoPrice    "
+                "${SEVEN_ELEVEN}: $sevenElevenPrice ⭐\n${LIBERTY}: $libertyPrice\n${COSTCO}: $costcoPrice"
             assertEquals(expectedMessage, message)
         }
 
@@ -37,7 +37,7 @@ class MessageUtilsTest {
 
             val message = makeSmsMessage(stationToPrice)
 
-            val expectedMessage = "$SEVEN_ELEVEN   N/A      \n$LIBERTY    N/A      \n$COSTCO     N/A      "
+            val expectedMessage = "${SEVEN_ELEVEN}: N/A\n${LIBERTY}: N/A\n${COSTCO}: N/A"
             assertEquals(expectedMessage, message)
         }
     }
