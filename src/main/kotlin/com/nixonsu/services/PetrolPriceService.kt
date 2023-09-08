@@ -2,6 +2,7 @@ package com.nixonsu.services
 
 import com.nixonsu.clients.ElevenSevenClient
 import com.nixonsu.clients.PetrolSpyClient
+import com.nixonsu.enums.Station.*
 import com.nixonsu.utils.extractLowestU91PriceAllRegions
 import com.nixonsu.utils.extractU91PriceFromHtml
 import org.slf4j.LoggerFactory
@@ -23,7 +24,7 @@ class PetrolPriceService(
 
     fun getU91PriceForLiberty(): Double? {
         try {
-            val petrolSpyHtmlResponse = petrolSpyClient.getLibertyStationPricesHtml()
+            val petrolSpyHtmlResponse = petrolSpyClient.getStationPricesHtmlFor(LIBERTY)
 
             return extractU91PriceFromHtml(petrolSpyHtmlResponse)
         } catch (e: Exception) {
@@ -35,7 +36,7 @@ class PetrolPriceService(
 
     fun getU91PriceForCostco(): Double? {
         try {
-            val petrolSpyHtmlResponse = petrolSpyClient.getCostcoStationPricesHtml()
+            val petrolSpyHtmlResponse = petrolSpyClient.getStationPricesHtmlFor(COSTCO)
 
             return extractU91PriceFromHtml(petrolSpyHtmlResponse)
         } catch (e: Exception) {
