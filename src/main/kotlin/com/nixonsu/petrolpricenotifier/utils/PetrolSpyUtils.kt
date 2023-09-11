@@ -1,4 +1,4 @@
-package com.nixonsu.utils
+package com.nixonsu.petrolpricenotifier.utils
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element

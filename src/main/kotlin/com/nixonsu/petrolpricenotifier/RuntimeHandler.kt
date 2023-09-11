@@ -1,13 +1,13 @@
-package com.nixonsu
+package com.nixonsu.petrolpricenotifier
 
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
-import com.nixonsu.clients.ElevenSevenClient
-import com.nixonsu.clients.PetrolSpyClient
-import com.nixonsu.services.PetrolPriceService
+import com.nixonsu.petrolpricenotifier.clients.ElevenSevenClient
+import com.nixonsu.petrolpricenotifier.clients.PetrolSpyClient
+import com.nixonsu.petrolpricenotifier.services.PetrolPriceService
 import java.net.http.HttpClient
 
 class RuntimeHandler : RequestHandler<Map<String, Any>, String> {

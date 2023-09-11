@@ -1,6 +1,6 @@
-package com.nixonsu.utils
+package com.nixonsu.petrolpricenotifier.utils
 
-import com.nixonsu.enums.Station
+import com.nixonsu.petrolpricenotifier.enums.Station
 
 fun makeSmsMessage(stationToPrice: Map<Station, Double?>): String {
     val stringBuilder = StringBuilder()

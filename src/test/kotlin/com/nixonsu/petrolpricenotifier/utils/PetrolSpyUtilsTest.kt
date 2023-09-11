@@ -1,4 +1,4 @@
-package com.nixonsu.utils
+package com.nixonsu.petrolpricenotifier.utils
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Nested

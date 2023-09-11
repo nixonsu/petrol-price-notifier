@@ -1,4 +1,4 @@
-package com.nixonsu.enums
+package com.nixonsu.petrolpricenotifier.enums
 
 enum class Station(private val stationName: String) {
     SEVEN_ELEVEN("7-Eleven"),

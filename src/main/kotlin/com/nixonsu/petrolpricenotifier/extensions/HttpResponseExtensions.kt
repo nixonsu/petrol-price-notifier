@@ -1,4 +1,4 @@
-package com.nixonsu.extensions
+package com.nixonsu.petrolpricenotifier.extensions
 
 import java.net.http.HttpResponse
 

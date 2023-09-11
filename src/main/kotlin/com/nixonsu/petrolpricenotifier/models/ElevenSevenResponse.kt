@@ -1,4 +1,4 @@
-package com.nixonsu.models
+package com.nixonsu.petrolpricenotifier.models
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 

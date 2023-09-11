@@ -1,8 +1,8 @@
-package com.nixonsu.clients
+package com.nixonsu.petrolpricenotifier.clients
 
-import com.nixonsu.enums.Station
-import com.nixonsu.enums.Station.*
-import com.nixonsu.extensions.reasonPhrase
+import com.nixonsu.petrolpricenotifier.enums.Station
+import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.extensions.reasonPhrase
 import org.apache.http.client.HttpResponseException
 import org.slf4j.LoggerFactory
 import java.io.ByteArrayInputStream

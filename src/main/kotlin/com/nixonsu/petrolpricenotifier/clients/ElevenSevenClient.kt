@@ -1,10 +1,10 @@
-package com.nixonsu.clients
+package com.nixonsu.petrolpricenotifier.clients
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.nixonsu.extensions.reasonPhrase
-import com.nixonsu.models.ElevenSevenResponse
+import com.nixonsu.petrolpricenotifier.extensions.reasonPhrase
+import com.nixonsu.petrolpricenotifier.models.ElevenSevenResponse
 import org.apache.http.client.HttpResponseException
 import org.slf4j.LoggerFactory
 import java.net.URI

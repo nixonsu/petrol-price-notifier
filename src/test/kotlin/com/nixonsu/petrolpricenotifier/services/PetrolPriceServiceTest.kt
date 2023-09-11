@@ -1,7 +1,7 @@
-package com.nixonsu.services
+package com.nixonsu.petrolpricenotifier.services
 
-import com.nixonsu.clients.ElevenSevenClient
-import com.nixonsu.clients.PetrolSpyClient
+import com.nixonsu.petrolpricenotifier.clients.ElevenSevenClient
+import com.nixonsu.petrolpricenotifier.clients.PetrolSpyClient
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertEquals

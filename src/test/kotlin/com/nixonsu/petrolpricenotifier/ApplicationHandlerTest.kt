@@ -1,11 +1,11 @@
-package com.nixonsu
+package com.nixonsu.petrolpricenotifier
 
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.enums.Station.*
-import com.nixonsu.services.PetrolPriceService
-import com.nixonsu.utils.makeSmsMessage
+import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.services.PetrolPriceService
+import com.nixonsu.petrolpricenotifier.utils.makeSmsMessage
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

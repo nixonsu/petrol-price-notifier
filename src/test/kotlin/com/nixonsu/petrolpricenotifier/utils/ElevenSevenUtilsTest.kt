@@ -1,9 +1,9 @@
-package com.nixonsu.utils
+package com.nixonsu.petrolpricenotifier.utils
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.nixonsu.models.ElevenSevenResponse
+import com.nixonsu.petrolpricenotifier.models.ElevenSevenResponse
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test

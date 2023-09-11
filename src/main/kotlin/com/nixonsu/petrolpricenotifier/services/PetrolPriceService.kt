@@ -1,10 +1,10 @@
-package com.nixonsu.services
+package com.nixonsu.petrolpricenotifier.services
 
-import com.nixonsu.clients.ElevenSevenClient
-import com.nixonsu.clients.PetrolSpyClient
-import com.nixonsu.enums.Station.*
-import com.nixonsu.utils.extractLowestU91PriceAllRegions
-import com.nixonsu.utils.extractU91PriceFromHtml
+import com.nixonsu.petrolpricenotifier.clients.ElevenSevenClient
+import com.nixonsu.petrolpricenotifier.clients.PetrolSpyClient
+import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.utils.extractLowestU91PriceAllRegions
+import com.nixonsu.petrolpricenotifier.utils.extractU91PriceFromHtml
 import org.slf4j.LoggerFactory
 
 class PetrolPriceService(
