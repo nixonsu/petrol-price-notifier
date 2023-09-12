@@ -45,7 +45,7 @@ Resources:
     Type: "AWS::Lambda::Function"
     Properties:
       FunctionName: "PetrolPriceNotifier"
-      Handler: "com.nixonsu.RuntimeHandler"
+      Handler: "com.nixonsu.petrolpricenotifier.RuntimeHandler"
       Role:
         Fn::GetAtt:
           - "LambdaExecutionRole"
