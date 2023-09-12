@@ -60,7 +60,8 @@ class PetrolSpyClient(private val httpClient: HttpClient) {
 
         private val stationToUrl = mapOf(
             LIBERTY to "https://petrolspy.com.au/map/station/58ae945fe4b0435d6f15971b",
-            COSTCO to "https://petrolspy.com.au/map/station/569c791974770a18583e6964"
+            COSTCO to "https://petrolspy.com.au/map/station/569c791974770a18583e6964",
+            BP to "https://petrolspy.com.au/map/station/5212adc80364fe88b97858e9"
         )
     }
 }

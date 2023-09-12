@@ -46,6 +46,18 @@ class PetrolPriceService(
         return null
     }
 
+    fun getU91PriceForBp(): Double? {
+        try {
+            val petrolSpyHtmlResponse = petrolSpyClient.getStationPricesHtmlFor(BP)
+
+            return extractU91PriceFromHtml(petrolSpyHtmlResponse)
+        } catch (e: Exception) {
+            logger.warn("Error retrieving U91 price of Costco", e)
+        }
+
+        return null
+    }
+
     companion object {
         private val logger = LoggerFactory.getLogger(PetrolPriceService::class.java)
     }

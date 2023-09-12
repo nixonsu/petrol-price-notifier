@@ -24,10 +24,13 @@ class ApplicationHandler(
 
         val costcoPrice = petrolPriceService.getU91PriceForCostco()
 
+        val bpPrice = petrolPriceService.getU91PriceForBp()
+
         val stationToPrice = mapOf(
             SEVEN_ELEVEN to sevenElevenPrice,
             LIBERTY to libertyPrice,
-            COSTCO to costcoPrice
+            COSTCO to costcoPrice,
+            BP to bpPrice
         )
 
         logger.info("Finished fetching petrol prices")

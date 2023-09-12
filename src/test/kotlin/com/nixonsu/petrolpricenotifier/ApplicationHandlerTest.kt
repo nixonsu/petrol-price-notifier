@@ -24,17 +24,20 @@ class ApplicationHandlerTest {
         val sevenElevenPrice = 160.0
         val libertyPrice = 170.0
         val costcoPrice = 165.0
+        val bpPrice = 200.0
         val expectedMessage = makeSmsMessage(
             mapOf(
                 SEVEN_ELEVEN to sevenElevenPrice,
                 LIBERTY to libertyPrice,
-                COSTCO to costcoPrice
+                COSTCO to costcoPrice,
+                BP to bpPrice
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
         every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns sevenElevenPrice
         every { petrolPriceService.getU91PriceForLiberty() } returns libertyPrice
         every { petrolPriceService.getU91PriceForCostco() } returns costcoPrice
+        every { petrolPriceService.getU91PriceForBp() } returns bpPrice
 
         // When
         subject.handle(emptyMap(), context)
@@ -49,11 +52,13 @@ class ApplicationHandlerTest {
         every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns null
         every { petrolPriceService.getU91PriceForLiberty() } returns null
         every { petrolPriceService.getU91PriceForCostco() } returns null
+        every { petrolPriceService.getU91PriceForBp() } returns null
         val expectedMessage = makeSmsMessage(
             mapOf(
                 SEVEN_ELEVEN to null,
                 LIBERTY to null,
-                COSTCO to null
+                COSTCO to null,
+                BP to null
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
