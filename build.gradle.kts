@@ -31,6 +31,10 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+application {
+    mainClass.set("com.nixonsu.petrolpricenotifier.RuntimeHandlerKt")
+}
+
 tasks.test {
     useJUnitPlatform()
 }
