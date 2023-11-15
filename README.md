@@ -2,6 +2,13 @@
 
 Daily cron job that fetches the lowest, nearby petrol prices for the day and sends it to my phone via an SMS message.
 
+<div align="center">
+<img width="353" alt="image" src="https://github.com/nixonsu/petrol-price-notifier/assets/57848315/2f1a3356-5d06-480a-917d-573fd0e0aeef">
+<p align = "center">
+<i>SMS Message</i>
+</p>
+</div>
+
 ## Technology 🛠️
 
 - [Kotlin](https://kotlinlang.org/)
