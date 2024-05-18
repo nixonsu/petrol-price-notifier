@@ -4,7 +4,9 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import java.util.regex.Pattern
 
-fun extractU91PriceFromHtml(petrolSpyHtmlResponse: String): Double? {
+class MalformedHtmlResponseException(message: String): RuntimeException(message)
+
+fun extractU91PriceFromHtml(petrolSpyHtmlResponse: String): Double {
     val document = Jsoup.parse(petrolSpyHtmlResponse)
     val pricesList: Element? = document.getElementById("prices-list")
 
@@ -19,5 +21,5 @@ fun extractU91PriceFromHtml(petrolSpyHtmlResponse: String): Double? {
         }
     }
 
-    return null
+    throw MalformedHtmlResponseException("Unable to extract U91 price as html is not in expected format")
 }

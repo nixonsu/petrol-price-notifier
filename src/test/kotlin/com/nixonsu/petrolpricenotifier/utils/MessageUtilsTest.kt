@@ -1,7 +1,7 @@
 package com.nixonsu.petrolpricenotifier.utils
 
-import com.nixonsu.petrolpricenotifier.enums.Station
-import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.models.Station
+import com.nixonsu.petrolpricenotifier.models.Station.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test

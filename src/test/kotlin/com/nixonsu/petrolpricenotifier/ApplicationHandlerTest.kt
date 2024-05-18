@@ -3,7 +3,9 @@ package com.nixonsu.petrolpricenotifier
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.exceptions.UnableToRetrievePriceException
+import com.nixonsu.petrolpricenotifier.models.Fuel
+import com.nixonsu.petrolpricenotifier.models.Station.*
 import com.nixonsu.petrolpricenotifier.services.PetrolPriceService
 import com.nixonsu.petrolpricenotifier.utils.makeSmsMessage
 import io.mockk.every
@@ -34,10 +36,10 @@ class ApplicationHandlerTest {
             )
         )
         val expectedPublishRequest = PublishRequest(snsTopicArn, expectedMessage)
-        every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns sevenElevenPrice
-        every { petrolPriceService.getU91PriceForLiberty() } returns libertyPrice
-        every { petrolPriceService.getU91PriceForCostco() } returns costcoPrice
-        every { petrolPriceService.getU91PriceForBp() } returns bpPrice
+        every { petrolPriceService.getLowestPriceFor(SEVEN_ELEVEN, Fuel.U91) } returns sevenElevenPrice
+        every { petrolPriceService.getLowestPriceFor(LIBERTY, Fuel.U91) } returns libertyPrice
+        every { petrolPriceService.getLowestPriceFor(COSTCO, Fuel.U91) } returns costcoPrice
+        every { petrolPriceService.getLowestPriceFor(BP, Fuel.U91) } returns bpPrice
 
         // When
         subject.handle(emptyMap(), context)
@@ -49,10 +51,10 @@ class ApplicationHandlerTest {
     @Test
     fun `Given petrol prices are not retrieved successfully then still publish message to sns`() {
         // Given
-        every { petrolPriceService.getLowestU91PriceForSevenElevenInAustralia() } returns null
-        every { petrolPriceService.getU91PriceForLiberty() } returns null
-        every { petrolPriceService.getU91PriceForCostco() } returns null
-        every { petrolPriceService.getU91PriceForBp() } returns null
+        every { petrolPriceService.getLowestPriceFor(SEVEN_ELEVEN, Fuel.U91) } throws UnableToRetrievePriceException("", null)
+        every { petrolPriceService.getLowestPriceFor(LIBERTY, Fuel.U91) } throws UnableToRetrievePriceException("", null)
+        every { petrolPriceService.getLowestPriceFor(COSTCO, Fuel.U91) } throws UnableToRetrievePriceException("", null)
+        every { petrolPriceService.getLowestPriceFor(BP, Fuel.U91) } throws UnableToRetrievePriceException("", null)
         val expectedMessage = makeSmsMessage(
             mapOf(
                 SEVEN_ELEVEN to null,

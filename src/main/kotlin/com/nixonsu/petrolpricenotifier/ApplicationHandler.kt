@@ -3,7 +3,9 @@ package com.nixonsu.petrolpricenotifier
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.exceptions.UnableToRetrievePriceException
+import com.nixonsu.petrolpricenotifier.models.Fuel
+import com.nixonsu.petrolpricenotifier.models.Station
 import com.nixonsu.petrolpricenotifier.services.PetrolPriceService
 import com.nixonsu.petrolpricenotifier.utils.makeSmsMessage
 import org.slf4j.LoggerFactory
@@ -15,27 +17,20 @@ class ApplicationHandler(
 ) {
     fun handle(event: Map<String, Any>, context: Context) {
         logger.info("Received Event:\n${event}")
-
         logger.info("Fetching petrol prices...")
 
-        val sevenElevenPrice = petrolPriceService.getLowestU91PriceForSevenElevenInAustralia()
-
-        val libertyPrice = petrolPriceService.getU91PriceForLiberty()
-
-        val costcoPrice = petrolPriceService.getU91PriceForCostco()
-
-        val bpPrice = petrolPriceService.getU91PriceForBp()
-
-        val stationToPrice = mapOf(
-            SEVEN_ELEVEN to sevenElevenPrice,
-            LIBERTY to libertyPrice,
-            COSTCO to costcoPrice,
-            BP to bpPrice
-        )
-
+        val stations = enumValues<Station>()
+        val stationPrices = stations.associateWith {
+            try {
+                petrolPriceService.getLowestPriceFor(it, Fuel.U91)
+            } catch (e: UnableToRetrievePriceException) {
+                logger.warn("Unable to retrieve a price", e)
+                null
+            }
+        }
         logger.info("Finished fetching petrol prices")
 
-        val message = makeSmsMessage(stationToPrice)
+        val message = makeSmsMessage(stationPrices)
 
         val publishRequest = PublishRequest(snsTopicArn, message)
         logger.info("Publishing to SNS with publish request: {}", publishRequest)

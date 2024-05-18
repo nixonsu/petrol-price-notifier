@@ -1,7 +1,7 @@
 package com.nixonsu.petrolpricenotifier.clients
 
-import com.nixonsu.petrolpricenotifier.enums.Station
-import com.nixonsu.petrolpricenotifier.enums.Station.*
+import com.nixonsu.petrolpricenotifier.models.Station
+import com.nixonsu.petrolpricenotifier.models.Station.*
 import com.nixonsu.petrolpricenotifier.extensions.reasonPhrase
 import org.apache.http.client.HttpResponseException
 import org.slf4j.LoggerFactory
@@ -17,7 +17,7 @@ import java.util.zip.GZIPInputStream
 class PetrolSpyClient(private val httpClient: HttpClient) {
     fun getStationPricesHtmlFor(station: Station): String {
 
-        val request = stationToUrl[station]?.let { makePetrolSpyGetRequest(it) }
+        val request = stationUrls[station]?.let { makePetrolSpyGetRequest(it) }
 
         logger.info("Calling PetrolSpy: {}", request)
 
@@ -58,7 +58,7 @@ class PetrolSpyClient(private val httpClient: HttpClient) {
     companion object {
         private val logger = LoggerFactory.getLogger(PetrolSpyClient::class.java)
 
-        private val stationToUrl = mapOf(
+        private val stationUrls = mapOf(
             LIBERTY to "https://petrolspy.com.au/map/station/58ae945fe4b0435d6f15971b",
             COSTCO to "https://petrolspy.com.au/map/station/569c791974770a18583e6964",
             BP to "https://petrolspy.com.au/map/station/5212adc80364fe88b97858e9"
